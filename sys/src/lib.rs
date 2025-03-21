@@ -20,6 +20,12 @@ pub unsafe extern "system" fn stub_enumerate_api_layer_properties(
     panic!("Runtime didn't provide a xrEnumerateApiLayers entry point");
 }
 
+pub trait Handle: Copy + Clone {
+    const NULL: Self;
+    fn into_raw(self) -> u64;
+    fn from_raw(handle: u64) -> Self;
+}
+
 // Hand-written bindings for cases which are too few or weird to bother automating
 
 wrapper! {
