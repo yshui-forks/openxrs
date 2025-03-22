@@ -1560,7 +1560,6 @@ impl Parser {
 
             #![allow(clippy::wrong_self_convention, clippy::transmute_ptr_to_ptr, clippy::missing_transmute_annotations)]
             use std::borrow::Cow;
-            use std::ffi::CStr;
             use std::mem::MaybeUninit;
             use std::iter::FromIterator;
             pub use sys::{#(#reexports),*};
@@ -1622,21 +1621,6 @@ impl Parser {
                             .map(ToString::to_string)
                             .collect(),
                     }
-                }
-
-                pub(crate) fn from_properties(properties: &[sys::ExtensionProperties]) -> Self {
-                    properties
-                        .iter()
-                        .map(|ext| {
-                            let name = unsafe {
-                                &*(&ext.extension_name as *const _ as *const [u8; sys::MAX_EXTENSION_NAME_SIZE])
-                            };
-                            CStr::from_bytes_until_nul(name)
-                                .expect("extension names should be null terminated strings")
-                                .to_str()
-                                .expect("extension names should be valid UTF-8")
-                        })
-                        .collect()
                 }
 
                 pub(crate) fn names(&self) -> Vec<Cow<'static, [u8]>> {

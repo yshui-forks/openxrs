@@ -149,3 +149,21 @@ fn get_arr_init<T: Copy>(
         }
     }
 }
+
+impl<'a> From<&'a [sys::ExtensionProperties]> for generated::ExtensionSet {
+    fn from(properties: &'a [sys::ExtensionProperties]) -> Self {
+        properties
+            .iter()
+            .map(|ext| {
+                // Safety: c_char and u8 have the same size, alignment, and representation.
+                let name = unsafe {
+                    &*(&ext.extension_name as *const _ as *const [u8; sys::MAX_EXTENSION_NAME_SIZE])
+                };
+                std::ffi::CStr::from_bytes_until_nul(name)
+                    .expect("extension names should be null terminated strings")
+                    .to_str()
+                    .expect("extension names should be valid UTF-8")
+            })
+            .collect()
+    }
+}

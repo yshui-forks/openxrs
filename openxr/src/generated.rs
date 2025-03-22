@@ -6,7 +6,6 @@
 )]
 use crate::*;
 use std::borrow::Cow;
-use std::ffi::CStr;
 use std::iter::FromIterator;
 use std::mem::MaybeUninit;
 pub use sys::platform::{
@@ -1256,20 +1255,6 @@ impl ExtensionSet {
                 .map(ToString::to_string)
                 .collect(),
         }
-    }
-    pub(crate) fn from_properties(properties: &[sys::ExtensionProperties]) -> Self {
-        properties
-            .iter()
-            .map(|ext| {
-                let name = unsafe {
-                    &*(&ext.extension_name as *const _ as *const [u8; sys::MAX_EXTENSION_NAME_SIZE])
-                };
-                CStr::from_bytes_until_nul(name)
-                    .expect("extension names should be null terminated strings")
-                    .to_str()
-                    .expect("extension names should be valid UTF-8")
-            })
-            .collect()
     }
     pub(crate) fn names(&self) -> Vec<Cow<'static, [u8]>> {
         let mut out = Vec::new();
