@@ -7,6 +7,7 @@
 use crate::*;
 use std::borrow::Cow;
 use std::ffi::CStr;
+use std::iter::FromIterator;
 use std::mem::MaybeUninit;
 pub use sys::platform::{
     EGLenum, VkComponentSwizzle, VkFilter, VkSamplerAddressMode, VkSamplerMipmapMode,
@@ -235,499 +236,510 @@ pub struct ExtensionSet {
     #[doc = r" Extensions unknown to the high-level bindings"]
     pub other: Vec<String>,
 }
-impl ExtensionSet {
-    pub(crate) fn from_properties(properties: &[sys::ExtensionProperties]) -> Self {
+impl<'a> FromIterator<&'a str> for ExtensionSet {
+    fn from_iter<I>(iter: I) -> Self
+    where
+        I: IntoIterator<Item = &'a str>,
+    {
         let mut out = Self::default();
-        for ext in properties {
-            match crate::fixed_str_bytes(&ext.extension_name) {
-                raw::DigitalLensControlALMALENCE::NAME => {
+        for name in iter {
+            match name {
+                raw::DigitalLensControlALMALENCE::NAME_STR => {
                     out.almalence_digital_lens_control = true;
                 }
-                raw::ControllerInteractionBD::NAME => {
+                raw::ControllerInteractionBD::NAME_STR => {
                     out.bd_controller_interaction = true;
                 }
-                raw::ViewConfigurationFovEPIC::NAME => {
+                raw::ViewConfigurationFovEPIC::NAME_STR => {
                     out.epic_view_configuration_fov = true;
                 }
-                raw::PerformanceSettingsEXT::NAME => {
+                raw::PerformanceSettingsEXT::NAME_STR => {
                     out.ext_performance_settings = true;
                 }
-                raw::ThermalQueryEXT::NAME => {
+                raw::ThermalQueryEXT::NAME_STR => {
                     out.ext_thermal_query = true;
                 }
-                raw::DebugUtilsEXT::NAME => {
+                raw::DebugUtilsEXT::NAME_STR => {
                     out.ext_debug_utils = true;
                 }
-                raw::EyeGazeInteractionEXT::NAME => {
+                raw::EyeGazeInteractionEXT::NAME_STR => {
                     out.ext_eye_gaze_interaction = true;
                 }
-                raw::ViewConfigurationDepthRangeEXT::NAME => {
+                raw::ViewConfigurationDepthRangeEXT::NAME_STR => {
                     out.ext_view_configuration_depth_range = true;
                 }
-                raw::ConformanceAutomationEXT::NAME => {
+                raw::ConformanceAutomationEXT::NAME_STR => {
                     out.ext_conformance_automation = true;
                 }
-                raw::HandTrackingEXT::NAME => {
+                raw::HandTrackingEXT::NAME_STR => {
                     out.ext_hand_tracking = true;
                 }
                 #[cfg(windows)]
-                raw::Win32AppcontainerCompatibleEXT::NAME => {
+                raw::Win32AppcontainerCompatibleEXT::NAME_STR => {
                     out.ext_win32_appcontainer_compatible = true;
                 }
-                raw::DpadBindingEXT::NAME => {
+                raw::DpadBindingEXT::NAME_STR => {
                     out.ext_dpad_binding = true;
                 }
-                raw::HandJointsMotionRangeEXT::NAME => {
+                raw::HandJointsMotionRangeEXT::NAME_STR => {
                     out.ext_hand_joints_motion_range = true;
                 }
-                raw::SamsungOdysseyControllerEXT::NAME => {
+                raw::SamsungOdysseyControllerEXT::NAME_STR => {
                     out.ext_samsung_odyssey_controller = true;
                 }
-                raw::HpMixedRealityControllerEXT::NAME => {
+                raw::HpMixedRealityControllerEXT::NAME_STR => {
                     out.ext_hp_mixed_reality_controller = true;
                 }
-                raw::PalmPoseEXT::NAME => {
+                raw::PalmPoseEXT::NAME_STR => {
                     out.ext_palm_pose = true;
                 }
-                raw::UuidEXT::NAME => {
+                raw::UuidEXT::NAME_STR => {
                     out.ext_uuid = true;
                 }
-                raw::HandInteractionEXT::NAME => {
+                raw::HandInteractionEXT::NAME_STR => {
                     out.ext_hand_interaction = true;
                 }
-                raw::ActiveActionSetPriorityEXT::NAME => {
+                raw::ActiveActionSetPriorityEXT::NAME_STR => {
                     out.ext_active_action_set_priority = true;
                 }
-                raw::LocalFloorEXT::NAME => {
+                raw::LocalFloorEXT::NAME_STR => {
                     out.ext_local_floor = true;
                 }
-                raw::HandTrackingDataSourceEXT::NAME => {
+                raw::HandTrackingDataSourceEXT::NAME_STR => {
                     out.ext_hand_tracking_data_source = true;
                 }
-                raw::PlaneDetectionEXT::NAME => {
+                raw::PlaneDetectionEXT::NAME_STR => {
                     out.ext_plane_detection = true;
                 }
-                raw::FutureEXT::NAME => {
+                raw::FutureEXT::NAME_STR => {
                     out.ext_future = true;
                 }
-                raw::UserPresenceEXT::NAME => {
+                raw::UserPresenceEXT::NAME_STR => {
                     out.ext_user_presence = true;
                 }
-                raw::CompositionLayerInvertedAlphaEXT::NAME => {
+                raw::CompositionLayerInvertedAlphaEXT::NAME_STR => {
                     out.ext_composition_layer_inverted_alpha = true;
                 }
-                raw::CompositionLayerImageLayoutFB::NAME => {
+                raw::CompositionLayerImageLayoutFB::NAME_STR => {
                     out.fb_composition_layer_image_layout = true;
                 }
-                raw::CompositionLayerAlphaBlendFB::NAME => {
+                raw::CompositionLayerAlphaBlendFB::NAME_STR => {
                     out.fb_composition_layer_alpha_blend = true;
                 }
                 #[cfg(target_os = "android")]
-                raw::AndroidSurfaceSwapchainCreateFB::NAME => {
+                raw::AndroidSurfaceSwapchainCreateFB::NAME_STR => {
                     out.fb_android_surface_swapchain_create = true;
                 }
-                raw::SwapchainUpdateStateFB::NAME => {
+                raw::SwapchainUpdateStateFB::NAME_STR => {
                     out.fb_swapchain_update_state = true;
                 }
-                raw::CompositionLayerSecureContentFB::NAME => {
+                raw::CompositionLayerSecureContentFB::NAME_STR => {
                     out.fb_composition_layer_secure_content = true;
                 }
-                raw::BodyTrackingFB::NAME => {
+                raw::BodyTrackingFB::NAME_STR => {
                     out.fb_body_tracking = true;
                 }
-                raw::DisplayRefreshRateFB::NAME => {
+                raw::DisplayRefreshRateFB::NAME_STR => {
                     out.fb_display_refresh_rate = true;
                 }
-                raw::ColorSpaceFB::NAME => {
+                raw::ColorSpaceFB::NAME_STR => {
                     out.fb_color_space = true;
                 }
-                raw::HandTrackingMeshFB::NAME => {
+                raw::HandTrackingMeshFB::NAME_STR => {
                     out.fb_hand_tracking_mesh = true;
                 }
-                raw::HandTrackingAimFB::NAME => {
+                raw::HandTrackingAimFB::NAME_STR => {
                     out.fb_hand_tracking_aim = true;
                 }
-                raw::HandTrackingCapsulesFB::NAME => {
+                raw::HandTrackingCapsulesFB::NAME_STR => {
                     out.fb_hand_tracking_capsules = true;
                 }
-                raw::SpatialEntityFB::NAME => {
+                raw::SpatialEntityFB::NAME_STR => {
                     out.fb_spatial_entity = true;
                 }
-                raw::FoveationFB::NAME => {
+                raw::FoveationFB::NAME_STR => {
                     out.fb_foveation = true;
                 }
-                raw::FoveationConfigurationFB::NAME => {
+                raw::FoveationConfigurationFB::NAME_STR => {
                     out.fb_foveation_configuration = true;
                 }
-                raw::KeyboardTrackingFB::NAME => {
+                raw::KeyboardTrackingFB::NAME_STR => {
                     out.fb_keyboard_tracking = true;
                 }
-                raw::TriangleMeshFB::NAME => {
+                raw::TriangleMeshFB::NAME_STR => {
                     out.fb_triangle_mesh = true;
                 }
-                raw::PassthroughFB::NAME => {
+                raw::PassthroughFB::NAME_STR => {
                     out.fb_passthrough = true;
                 }
-                raw::RenderModelFB::NAME => {
+                raw::RenderModelFB::NAME_STR => {
                     out.fb_render_model = true;
                 }
-                raw::SpatialEntityQueryFB::NAME => {
+                raw::SpatialEntityQueryFB::NAME_STR => {
                     out.fb_spatial_entity_query = true;
                 }
-                raw::SpatialEntityStorageFB::NAME => {
+                raw::SpatialEntityStorageFB::NAME_STR => {
                     out.fb_spatial_entity_storage = true;
                 }
-                raw::FoveationVulkanFB::NAME => {
+                raw::FoveationVulkanFB::NAME_STR => {
                     out.fb_foveation_vulkan = true;
                 }
                 #[cfg(target_os = "android")]
-                raw::SwapchainUpdateStateAndroidSurfaceFB::NAME => {
+                raw::SwapchainUpdateStateAndroidSurfaceFB::NAME_STR => {
                     out.fb_swapchain_update_state_android_surface = true;
                 }
-                raw::SwapchainUpdateStateOpenglEsFB::NAME => {
+                raw::SwapchainUpdateStateOpenglEsFB::NAME_STR => {
                     out.fb_swapchain_update_state_opengl_es = true;
                 }
-                raw::SwapchainUpdateStateVulkanFB::NAME => {
+                raw::SwapchainUpdateStateVulkanFB::NAME_STR => {
                     out.fb_swapchain_update_state_vulkan = true;
                 }
-                raw::TouchControllerProFB::NAME => {
+                raw::TouchControllerProFB::NAME_STR => {
                     out.fb_touch_controller_pro = true;
                 }
-                raw::SpatialEntitySharingFB::NAME => {
+                raw::SpatialEntitySharingFB::NAME_STR => {
                     out.fb_spatial_entity_sharing = true;
                 }
-                raw::SpaceWarpFB::NAME => {
+                raw::SpaceWarpFB::NAME_STR => {
                     out.fb_space_warp = true;
                 }
-                raw::HapticAmplitudeEnvelopeFB::NAME => {
+                raw::HapticAmplitudeEnvelopeFB::NAME_STR => {
                     out.fb_haptic_amplitude_envelope = true;
                 }
-                raw::SceneFB::NAME => {
+                raw::SceneFB::NAME_STR => {
                     out.fb_scene = true;
                 }
-                raw::SceneCaptureFB::NAME => {
+                raw::SceneCaptureFB::NAME_STR => {
                     out.fb_scene_capture = true;
                 }
-                raw::SpatialEntityContainerFB::NAME => {
+                raw::SpatialEntityContainerFB::NAME_STR => {
                     out.fb_spatial_entity_container = true;
                 }
-                raw::FaceTrackingFB::NAME => {
+                raw::FaceTrackingFB::NAME_STR => {
                     out.fb_face_tracking = true;
                 }
-                raw::EyeTrackingSocialFB::NAME => {
+                raw::EyeTrackingSocialFB::NAME_STR => {
                     out.fb_eye_tracking_social = true;
                 }
-                raw::PassthroughKeyboardHandsFB::NAME => {
+                raw::PassthroughKeyboardHandsFB::NAME_STR => {
                     out.fb_passthrough_keyboard_hands = true;
                 }
-                raw::CompositionLayerSettingsFB::NAME => {
+                raw::CompositionLayerSettingsFB::NAME_STR => {
                     out.fb_composition_layer_settings = true;
                 }
-                raw::TouchControllerProximityFB::NAME => {
+                raw::TouchControllerProximityFB::NAME_STR => {
                     out.fb_touch_controller_proximity = true;
                 }
-                raw::HapticPcmFB::NAME => {
+                raw::HapticPcmFB::NAME_STR => {
                     out.fb_haptic_pcm = true;
                 }
-                raw::CompositionLayerDepthTestFB::NAME => {
+                raw::CompositionLayerDepthTestFB::NAME_STR => {
                     out.fb_composition_layer_depth_test = true;
                 }
-                raw::SpatialEntityStorageBatchFB::NAME => {
+                raw::SpatialEntityStorageBatchFB::NAME_STR => {
                     out.fb_spatial_entity_storage_batch = true;
                 }
-                raw::SpatialEntityUserFB::NAME => {
+                raw::SpatialEntityUserFB::NAME_STR => {
                     out.fb_spatial_entity_user = true;
                 }
-                raw::FaceTracking2FB::NAME => {
+                raw::FaceTracking2FB::NAME_STR => {
                     out.fb_face_tracking2 = true;
                 }
-                raw::ViveCosmosControllerInteractionHTC::NAME => {
+                raw::ViveCosmosControllerInteractionHTC::NAME_STR => {
                     out.htc_vive_cosmos_controller_interaction = true;
                 }
-                raw::FacialTrackingHTC::NAME => {
+                raw::FacialTrackingHTC::NAME_STR => {
                     out.htc_facial_tracking = true;
                 }
-                raw::ViveFocus3ControllerInteractionHTC::NAME => {
+                raw::ViveFocus3ControllerInteractionHTC::NAME_STR => {
                     out.htc_vive_focus3_controller_interaction = true;
                 }
-                raw::HandInteractionHTC::NAME => {
+                raw::HandInteractionHTC::NAME_STR => {
                     out.htc_hand_interaction = true;
                 }
-                raw::ViveWristTrackerInteractionHTC::NAME => {
+                raw::ViveWristTrackerInteractionHTC::NAME_STR => {
                     out.htc_vive_wrist_tracker_interaction = true;
                 }
-                raw::PassthroughHTC::NAME => {
+                raw::PassthroughHTC::NAME_STR => {
                     out.htc_passthrough = true;
                 }
-                raw::FoveationHTC::NAME => {
+                raw::FoveationHTC::NAME_STR => {
                     out.htc_foveation = true;
                 }
-                raw::AnchorHTC::NAME => {
+                raw::AnchorHTC::NAME_STR => {
                     out.htc_anchor = true;
                 }
-                raw::ControllerInteractionHUAWEI::NAME => {
+                raw::ControllerInteractionHUAWEI::NAME_STR => {
                     out.huawei_controller_interaction = true;
                 }
                 #[cfg(target_os = "android")]
-                raw::AndroidThreadSettingsKHR::NAME => {
+                raw::AndroidThreadSettingsKHR::NAME_STR => {
                     out.khr_android_thread_settings = true;
                 }
                 #[cfg(target_os = "android")]
-                raw::AndroidSurfaceSwapchainKHR::NAME => {
+                raw::AndroidSurfaceSwapchainKHR::NAME_STR => {
                     out.khr_android_surface_swapchain = true;
                 }
-                raw::CompositionLayerCubeKHR::NAME => {
+                raw::CompositionLayerCubeKHR::NAME_STR => {
                     out.khr_composition_layer_cube = true;
                 }
                 #[cfg(target_os = "android")]
-                raw::AndroidCreateInstanceKHR::NAME => {
+                raw::AndroidCreateInstanceKHR::NAME_STR => {
                     out.khr_android_create_instance = true;
                 }
-                raw::CompositionLayerDepthKHR::NAME => {
+                raw::CompositionLayerDepthKHR::NAME_STR => {
                     out.khr_composition_layer_depth = true;
                 }
-                raw::VulkanSwapchainFormatListKHR::NAME => {
+                raw::VulkanSwapchainFormatListKHR::NAME_STR => {
                     out.khr_vulkan_swapchain_format_list = true;
                 }
-                raw::CompositionLayerCylinderKHR::NAME => {
+                raw::CompositionLayerCylinderKHR::NAME_STR => {
                     out.khr_composition_layer_cylinder = true;
                 }
-                raw::CompositionLayerEquirectKHR::NAME => {
+                raw::CompositionLayerEquirectKHR::NAME_STR => {
                     out.khr_composition_layer_equirect = true;
                 }
-                raw::OpenglEnableKHR::NAME => {
+                raw::OpenglEnableKHR::NAME_STR => {
                     out.khr_opengl_enable = true;
                 }
-                raw::OpenglEsEnableKHR::NAME => {
+                raw::OpenglEsEnableKHR::NAME_STR => {
                     out.khr_opengl_es_enable = true;
                 }
-                raw::VulkanEnableKHR::NAME => {
+                raw::VulkanEnableKHR::NAME_STR => {
                     out.khr_vulkan_enable = true;
                 }
                 #[cfg(windows)]
-                raw::D3d11EnableKHR::NAME => {
+                raw::D3d11EnableKHR::NAME_STR => {
                     out.khr_d3d11_enable = true;
                 }
                 #[cfg(windows)]
-                raw::D3d12EnableKHR::NAME => {
+                raw::D3d12EnableKHR::NAME_STR => {
                     out.khr_d3d12_enable = true;
                 }
                 #[cfg(target_vendor = "apple")]
-                raw::MetalEnableKHR::NAME => {
+                raw::MetalEnableKHR::NAME_STR => {
                     out.khr_metal_enable = true;
                 }
-                raw::VisibilityMaskKHR::NAME => {
+                raw::VisibilityMaskKHR::NAME_STR => {
                     out.khr_visibility_mask = true;
                 }
-                raw::CompositionLayerColorScaleBiasKHR::NAME => {
+                raw::CompositionLayerColorScaleBiasKHR::NAME_STR => {
                     out.khr_composition_layer_color_scale_bias = true;
                 }
                 #[cfg(windows)]
-                raw::Win32ConvertPerformanceCounterTimeKHR::NAME => {
+                raw::Win32ConvertPerformanceCounterTimeKHR::NAME_STR => {
                     out.khr_win32_convert_performance_counter_time = true;
                 }
-                raw::ConvertTimespecTimeKHR::NAME => {
+                raw::ConvertTimespecTimeKHR::NAME_STR => {
                     out.khr_convert_timespec_time = true;
                 }
-                raw::LoaderInitKHR::NAME => {
+                raw::LoaderInitKHR::NAME_STR => {
                     out.khr_loader_init = true;
                 }
                 #[cfg(target_os = "android")]
-                raw::LoaderInitAndroidKHR::NAME => {
+                raw::LoaderInitAndroidKHR::NAME_STR => {
                     out.khr_loader_init_android = true;
                 }
-                raw::VulkanEnable2KHR::NAME => {
+                raw::VulkanEnable2KHR::NAME_STR => {
                     out.khr_vulkan_enable2 = true;
                 }
-                raw::CompositionLayerEquirect2KHR::NAME => {
+                raw::CompositionLayerEquirect2KHR::NAME_STR => {
                     out.khr_composition_layer_equirect2 = true;
                 }
-                raw::BindingModificationKHR::NAME => {
+                raw::BindingModificationKHR::NAME_STR => {
                     out.khr_binding_modification = true;
                 }
-                raw::SwapchainUsageInputAttachmentBitKHR::NAME => {
+                raw::SwapchainUsageInputAttachmentBitKHR::NAME_STR => {
                     out.khr_swapchain_usage_input_attachment_bit = true;
                 }
-                raw::LocateSpacesKHR::NAME => {
+                raw::LocateSpacesKHR::NAME_STR => {
                     out.khr_locate_spaces = true;
                 }
-                raw::Maintenance1KHR::NAME => {
+                raw::Maintenance1KHR::NAME_STR => {
                     out.khr_maintenance1 = true;
                 }
-                raw::FoveationEyeTrackedMETA::NAME => {
+                raw::FoveationEyeTrackedMETA::NAME_STR => {
                     out.meta_foveation_eye_tracked = true;
                 }
-                raw::LocalDimmingMETA::NAME => {
+                raw::LocalDimmingMETA::NAME_STR => {
                     out.meta_local_dimming = true;
                 }
-                raw::PassthroughPreferencesMETA::NAME => {
+                raw::PassthroughPreferencesMETA::NAME_STR => {
                     out.meta_passthrough_preferences = true;
                 }
-                raw::VirtualKeyboardMETA::NAME => {
+                raw::VirtualKeyboardMETA::NAME_STR => {
                     out.meta_virtual_keyboard = true;
                 }
-                raw::VulkanSwapchainCreateInfoMETA::NAME => {
+                raw::VulkanSwapchainCreateInfoMETA::NAME_STR => {
                     out.meta_vulkan_swapchain_create_info = true;
                 }
-                raw::PerformanceMetricsMETA::NAME => {
+                raw::PerformanceMetricsMETA::NAME_STR => {
                     out.meta_performance_metrics = true;
                 }
-                raw::HeadsetIdMETA::NAME => {
+                raw::HeadsetIdMETA::NAME_STR => {
                     out.meta_headset_id = true;
                 }
-                raw::RecommendedLayerResolutionMETA::NAME => {
+                raw::RecommendedLayerResolutionMETA::NAME_STR => {
                     out.meta_recommended_layer_resolution = true;
                 }
-                raw::PassthroughColorLutMETA::NAME => {
+                raw::PassthroughColorLutMETA::NAME_STR => {
                     out.meta_passthrough_color_lut = true;
                 }
-                raw::SpatialEntityMeshMETA::NAME => {
+                raw::SpatialEntityMeshMETA::NAME_STR => {
                     out.meta_spatial_entity_mesh = true;
                 }
-                raw::AutomaticLayerFilterMETA::NAME => {
+                raw::AutomaticLayerFilterMETA::NAME_STR => {
                     out.meta_automatic_layer_filter = true;
                 }
-                raw::TouchControllerPlusMETA::NAME => {
+                raw::TouchControllerPlusMETA::NAME_STR => {
                     out.meta_touch_controller_plus = true;
                 }
-                raw::EnvironmentDepthMETA::NAME => {
+                raw::EnvironmentDepthMETA::NAME_STR => {
                     out.meta_environment_depth = true;
                 }
-                raw::Ml2ControllerInteractionML::NAME => {
+                raw::Ml2ControllerInteractionML::NAME_STR => {
                     out.ml_ml2_controller_interaction = true;
                 }
-                raw::FrameEndInfoML::NAME => {
+                raw::FrameEndInfoML::NAME_STR => {
                     out.ml_frame_end_info = true;
                 }
-                raw::GlobalDimmerML::NAME => {
+                raw::GlobalDimmerML::NAME_STR => {
                     out.ml_global_dimmer = true;
                 }
-                raw::CompatML::NAME => {
+                raw::CompatML::NAME_STR => {
                     out.ml_compat = true;
                 }
-                raw::MarkerUnderstandingML::NAME => {
+                raw::MarkerUnderstandingML::NAME_STR => {
                     out.ml_marker_understanding = true;
                 }
-                raw::LocalizationMapML::NAME => {
+                raw::LocalizationMapML::NAME_STR => {
                     out.ml_localization_map = true;
                 }
-                raw::UserCalibrationML::NAME => {
+                raw::UserCalibrationML::NAME_STR => {
                     out.ml_user_calibration = true;
                 }
-                raw::HeadlessMND::NAME => {
+                raw::HeadlessMND::NAME_STR => {
                     out.mnd_headless = true;
                 }
-                raw::SwapchainUsageInputAttachmentBitMND::NAME => {
+                raw::SwapchainUsageInputAttachmentBitMND::NAME_STR => {
                     out.mnd_swapchain_usage_input_attachment_bit = true;
                 }
-                raw::UnboundedReferenceSpaceMSFT::NAME => {
+                raw::UnboundedReferenceSpaceMSFT::NAME_STR => {
                     out.msft_unbounded_reference_space = true;
                 }
-                raw::SpatialAnchorMSFT::NAME => {
+                raw::SpatialAnchorMSFT::NAME_STR => {
                     out.msft_spatial_anchor = true;
                 }
-                raw::SpatialGraphBridgeMSFT::NAME => {
+                raw::SpatialGraphBridgeMSFT::NAME_STR => {
                     out.msft_spatial_graph_bridge = true;
                 }
-                raw::HandInteractionMSFT::NAME => {
+                raw::HandInteractionMSFT::NAME_STR => {
                     out.msft_hand_interaction = true;
                 }
-                raw::HandTrackingMeshMSFT::NAME => {
+                raw::HandTrackingMeshMSFT::NAME_STR => {
                     out.msft_hand_tracking_mesh = true;
                 }
-                raw::SecondaryViewConfigurationMSFT::NAME => {
+                raw::SecondaryViewConfigurationMSFT::NAME_STR => {
                     out.msft_secondary_view_configuration = true;
                 }
-                raw::FirstPersonObserverMSFT::NAME => {
+                raw::FirstPersonObserverMSFT::NAME_STR => {
                     out.msft_first_person_observer = true;
                 }
-                raw::ControllerModelMSFT::NAME => {
+                raw::ControllerModelMSFT::NAME_STR => {
                     out.msft_controller_model = true;
                 }
                 #[cfg(windows)]
-                raw::PerceptionAnchorInteropMSFT::NAME => {
+                raw::PerceptionAnchorInteropMSFT::NAME_STR => {
                     out.msft_perception_anchor_interop = true;
                 }
                 #[cfg(windows)]
-                raw::HolographicWindowAttachmentMSFT::NAME => {
+                raw::HolographicWindowAttachmentMSFT::NAME_STR => {
                     out.msft_holographic_window_attachment = true;
                 }
-                raw::CompositionLayerReprojectionMSFT::NAME => {
+                raw::CompositionLayerReprojectionMSFT::NAME_STR => {
                     out.msft_composition_layer_reprojection = true;
                 }
-                raw::SpatialAnchorPersistenceMSFT::NAME => {
+                raw::SpatialAnchorPersistenceMSFT::NAME_STR => {
                     out.msft_spatial_anchor_persistence = true;
                 }
                 #[cfg(target_os = "android")]
-                raw::AndroidSessionStateEnableOCULUS::NAME => {
+                raw::AndroidSessionStateEnableOCULUS::NAME_STR => {
                     out.oculus_android_session_state_enable = true;
                 }
-                raw::AudioDeviceGuidOCULUS::NAME => {
+                raw::AudioDeviceGuidOCULUS::NAME_STR => {
                     out.oculus_audio_device_guid = true;
                 }
-                raw::ExternalCameraOCULUS::NAME => {
+                raw::ExternalCameraOCULUS::NAME_STR => {
                     out.oculus_external_camera = true;
                 }
-                raw::ControllerInteractionOPPO::NAME => {
+                raw::ControllerInteractionOPPO::NAME_STR => {
                     out.oppo_controller_interaction = true;
                 }
-                raw::TrackingOptimizationSettingsQCOM::NAME => {
+                raw::TrackingOptimizationSettingsQCOM::NAME_STR => {
                     out.qcom_tracking_optimization_settings = true;
                 }
-                raw::HandTrackingForearmULTRALEAP::NAME => {
+                raw::HandTrackingForearmULTRALEAP::NAME_STR => {
                     out.ultraleap_hand_tracking_forearm = true;
                 }
-                raw::AnalogThresholdVALVE::NAME => {
+                raw::AnalogThresholdVALVE::NAME_STR => {
                     out.valve_analog_threshold = true;
                 }
-                raw::QuadViewsVARJO::NAME => {
+                raw::QuadViewsVARJO::NAME_STR => {
                     out.varjo_quad_views = true;
                 }
-                raw::FoveatedRenderingVARJO::NAME => {
+                raw::FoveatedRenderingVARJO::NAME_STR => {
                     out.varjo_foveated_rendering = true;
                 }
-                raw::CompositionLayerDepthTestVARJO::NAME => {
+                raw::CompositionLayerDepthTestVARJO::NAME_STR => {
                     out.varjo_composition_layer_depth_test = true;
                 }
-                raw::EnvironmentDepthEstimationVARJO::NAME => {
+                raw::EnvironmentDepthEstimationVARJO::NAME_STR => {
                     out.varjo_environment_depth_estimation = true;
                 }
-                raw::MarkerTrackingVARJO::NAME => {
+                raw::MarkerTrackingVARJO::NAME_STR => {
                     out.varjo_marker_tracking = true;
                 }
-                raw::ViewOffsetVARJO::NAME => {
+                raw::ViewOffsetVARJO::NAME_STR => {
                     out.varjo_view_offset = true;
                 }
-                raw::Xr4ControllerInteractionVARJO::NAME => {
+                raw::Xr4ControllerInteractionVARJO::NAME_STR => {
                     out.varjo_xr4_controller_interaction = true;
                 }
-                raw::ControllerInteractionYVR::NAME => {
+                raw::ControllerInteractionYVR::NAME_STR => {
                     out.yvr_controller_interaction = true;
                 }
-                raw::OverlayEXTX::NAME => {
+                raw::OverlayEXTX::NAME_STR => {
                     out.extx_overlay = true;
                 }
-                raw::EglEnableMNDX::NAME => {
+                raw::EglEnableMNDX::NAME_STR => {
                     out.mndx_egl_enable = true;
                 }
-                raw::ForceFeedbackCurlMNDX::NAME => {
+                raw::ForceFeedbackCurlMNDX::NAME_STR => {
                     out.mndx_force_feedback_curl = true;
                 }
-                raw::ViveTrackerInteractionHTCX::NAME => {
+                raw::ViveTrackerInteractionHTCX::NAME_STR => {
                     out.htcx_vive_tracker_interaction = true;
                 }
-                bytes => {
-                    let cstr = CStr::from_bytes_with_nul(bytes)
-                        .expect("extension names should be null terminated strings");
-                    let string = cstr
-                        .to_str()
-                        .expect("extension names should be valid UTF-8")
-                        .to_string();
-                    out.other.push(string);
-                }
+                _ => out.other.push(name.to_string()),
             }
         }
         out
+    }
+}
+impl ExtensionSet {
+    pub(crate) fn from_properties(properties: &[sys::ExtensionProperties]) -> Self {
+        properties
+            .iter()
+            .map(|ext| {
+                let name = unsafe {
+                    &*(&ext.extension_name as *const _ as *const [u8; sys::MAX_EXTENSION_NAME_SIZE])
+                };
+                CStr::from_bytes_until_nul(name)
+                    .expect("extension names should be null terminated strings")
+                    .to_str()
+                    .expect("extension names should be valid UTF-8")
+            })
+            .collect()
     }
     pub(crate) fn names(&self) -> Vec<Cow<'static, [u8]>> {
         let mut out = Vec::new();
