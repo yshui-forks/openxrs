@@ -12,7 +12,7 @@ use std::{
 use heck::{ToShoutySnakeCase, ToSnakeCase, ToUpperCamelCase};
 use indexmap::{IndexMap, IndexSet};
 use proc_macro2::{Span, TokenStream};
-use quote::quote;
+use quote::{format_ident, quote};
 use regex::Regex;
 use syn::{Ident, LitByteStr};
 use xml::{
@@ -1252,6 +1252,8 @@ impl Parser {
                     Span::call_site(),
                 );
                 let name_lit = c_name(&ext.name);
+                let name_str = &ext.name;
+                let name_str_ident = format_ident!("{}_EXTENSION_NAME_STR", trimmed.to_uppercase());
                 let version_ident =
                     Ident::new(&format!("{}_SPEC_VERSION", trimmed), Span::call_site());
                 let version_lit = ext.version;
@@ -1262,6 +1264,8 @@ impl Parser {
                     pub const #version_ident: u32 = #version_lit;
                     #conds
                     pub const #name_ident: &[u8] = #name_lit;
+                    #conds
+                    pub const #name_str_ident: &str = #name_str;
                 }
             })
         });
@@ -1362,6 +1366,7 @@ impl Parser {
                 }).unzip::<_, _, Vec<_>, Vec<_>>();
 
                 let name_ident = Ident::new("NAME", Span::call_site());
+                let name_str_ident = format_ident!("NAME_STR");
                 let version_ident = Ident::new("VERSION", Span::call_site());
                 assert!(ext.name.starts_with("XR_"));
                 let trimmed = &ext.name[3..];
@@ -1369,6 +1374,7 @@ impl Parser {
                     &format!("{}_EXTENSION_NAME", trimmed.to_uppercase()),
                     Span::call_site(),
                 );
+                let name_str_const = format_ident!("{}_EXTENSION_NAME_STR", trimmed.to_uppercase());
                 let version_const =
                     Ident::new(&format!("{}_SPEC_VERSION", trimmed), Span::call_site());
                 let ext_name = split_ext_tag(&ext.name).1;
@@ -1410,6 +1416,7 @@ impl Parser {
                     impl #ty_ident {
                         pub const #version_ident: u32 = sys::#version_const;
                         pub const #name_ident: &'static [u8] = sys::#name_const;
+                        pub const #name_str_ident: &'static str = sys::#name_str_const;
                         #load
                     }
                 });

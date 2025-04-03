@@ -3651,6 +3651,7 @@ pub mod raw {
     impl DigitalLensControlALMALENCE {
         pub const VERSION: u32 = sys::ALMALENCE_digital_lens_control_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::ALMALENCE_DIGITAL_LENS_CONTROL_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::ALMALENCE_DIGITAL_LENS_CONTROL_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -3670,12 +3671,14 @@ pub mod raw {
     impl ControllerInteractionBD {
         pub const VERSION: u32 = sys::BD_controller_interaction_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::BD_CONTROLLER_INTERACTION_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::BD_CONTROLLER_INTERACTION_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct ViewConfigurationFovEPIC {}
     impl ViewConfigurationFovEPIC {
         pub const VERSION: u32 = sys::EPIC_view_configuration_fov_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::EPIC_VIEW_CONFIGURATION_FOV_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::EPIC_VIEW_CONFIGURATION_FOV_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct PerformanceSettingsEXT {
@@ -3684,6 +3687,7 @@ pub mod raw {
     impl PerformanceSettingsEXT {
         pub const VERSION: u32 = sys::EXT_performance_settings_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::EXT_PERFORMANCE_SETTINGS_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::EXT_PERFORMANCE_SETTINGS_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -3705,6 +3709,7 @@ pub mod raw {
     impl ThermalQueryEXT {
         pub const VERSION: u32 = sys::EXT_thermal_query_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::EXT_THERMAL_QUERY_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::EXT_THERMAL_QUERY_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -3732,6 +3737,7 @@ pub mod raw {
     impl DebugUtilsEXT {
         pub const VERSION: u32 = sys::EXT_debug_utils_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::EXT_DEBUG_UTILS_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::EXT_DEBUG_UTILS_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -3783,12 +3789,15 @@ pub mod raw {
     impl EyeGazeInteractionEXT {
         pub const VERSION: u32 = sys::EXT_eye_gaze_interaction_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::EXT_EYE_GAZE_INTERACTION_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::EXT_EYE_GAZE_INTERACTION_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct ViewConfigurationDepthRangeEXT {}
     impl ViewConfigurationDepthRangeEXT {
         pub const VERSION: u32 = sys::EXT_view_configuration_depth_range_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::EXT_VIEW_CONFIGURATION_DEPTH_RANGE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str =
+            sys::EXT_VIEW_CONFIGURATION_DEPTH_RANGE_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct ConformanceAutomationEXT {
@@ -3801,6 +3810,7 @@ pub mod raw {
     impl ConformanceAutomationEXT {
         pub const VERSION: u32 = sys::EXT_conformance_automation_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::EXT_CONFORMANCE_AUTOMATION_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::EXT_CONFORMANCE_AUTOMATION_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -3840,6 +3850,7 @@ pub mod raw {
     impl HandTrackingEXT {
         pub const VERSION: u32 = sys::EXT_hand_tracking_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::EXT_HAND_TRACKING_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::EXT_HAND_TRACKING_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -3869,66 +3880,78 @@ pub mod raw {
     impl Win32AppcontainerCompatibleEXT {
         pub const VERSION: u32 = sys::EXT_win32_appcontainer_compatible_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::EXT_WIN32_APPCONTAINER_COMPATIBLE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str =
+            sys::EXT_WIN32_APPCONTAINER_COMPATIBLE_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct DpadBindingEXT {}
     impl DpadBindingEXT {
         pub const VERSION: u32 = sys::EXT_dpad_binding_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::EXT_DPAD_BINDING_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::EXT_DPAD_BINDING_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct HandJointsMotionRangeEXT {}
     impl HandJointsMotionRangeEXT {
         pub const VERSION: u32 = sys::EXT_hand_joints_motion_range_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::EXT_HAND_JOINTS_MOTION_RANGE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::EXT_HAND_JOINTS_MOTION_RANGE_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct SamsungOdysseyControllerEXT {}
     impl SamsungOdysseyControllerEXT {
         pub const VERSION: u32 = sys::EXT_samsung_odyssey_controller_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::EXT_SAMSUNG_ODYSSEY_CONTROLLER_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::EXT_SAMSUNG_ODYSSEY_CONTROLLER_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct HpMixedRealityControllerEXT {}
     impl HpMixedRealityControllerEXT {
         pub const VERSION: u32 = sys::EXT_hp_mixed_reality_controller_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::EXT_HP_MIXED_REALITY_CONTROLLER_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::EXT_HP_MIXED_REALITY_CONTROLLER_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct PalmPoseEXT {}
     impl PalmPoseEXT {
         pub const VERSION: u32 = sys::EXT_palm_pose_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::EXT_PALM_POSE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::EXT_PALM_POSE_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct UuidEXT {}
     impl UuidEXT {
         pub const VERSION: u32 = sys::EXT_uuid_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::EXT_UUID_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::EXT_UUID_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct HandInteractionEXT {}
     impl HandInteractionEXT {
         pub const VERSION: u32 = sys::EXT_hand_interaction_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::EXT_HAND_INTERACTION_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::EXT_HAND_INTERACTION_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct ActiveActionSetPriorityEXT {}
     impl ActiveActionSetPriorityEXT {
         pub const VERSION: u32 = sys::EXT_active_action_set_priority_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::EXT_ACTIVE_ACTION_SET_PRIORITY_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::EXT_ACTIVE_ACTION_SET_PRIORITY_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct LocalFloorEXT {}
     impl LocalFloorEXT {
         pub const VERSION: u32 = sys::EXT_local_floor_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::EXT_LOCAL_FLOOR_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::EXT_LOCAL_FLOOR_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct HandTrackingDataSourceEXT {}
     impl HandTrackingDataSourceEXT {
         pub const VERSION: u32 = sys::EXT_hand_tracking_data_source_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::EXT_HAND_TRACKING_DATA_SOURCE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::EXT_HAND_TRACKING_DATA_SOURCE_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct PlaneDetectionEXT {
@@ -3942,6 +3965,7 @@ pub mod raw {
     impl PlaneDetectionEXT {
         pub const VERSION: u32 = sys::EXT_plane_detection_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::EXT_PLANE_DETECTION_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::EXT_PLANE_DETECTION_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -3984,6 +4008,7 @@ pub mod raw {
     impl FutureEXT {
         pub const VERSION: u32 = sys::EXT_future_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::EXT_FUTURE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::EXT_FUTURE_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4007,24 +4032,30 @@ pub mod raw {
     impl UserPresenceEXT {
         pub const VERSION: u32 = sys::EXT_user_presence_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::EXT_USER_PRESENCE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::EXT_USER_PRESENCE_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct CompositionLayerInvertedAlphaEXT {}
     impl CompositionLayerInvertedAlphaEXT {
         pub const VERSION: u32 = sys::EXT_composition_layer_inverted_alpha_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::EXT_COMPOSITION_LAYER_INVERTED_ALPHA_EXTENSION_NAME;
+        pub const NAME_STR: &'static str =
+            sys::EXT_COMPOSITION_LAYER_INVERTED_ALPHA_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct CompositionLayerImageLayoutFB {}
     impl CompositionLayerImageLayoutFB {
         pub const VERSION: u32 = sys::FB_composition_layer_image_layout_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_COMPOSITION_LAYER_IMAGE_LAYOUT_EXTENSION_NAME;
+        pub const NAME_STR: &'static str =
+            sys::FB_COMPOSITION_LAYER_IMAGE_LAYOUT_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct CompositionLayerAlphaBlendFB {}
     impl CompositionLayerAlphaBlendFB {
         pub const VERSION: u32 = sys::FB_composition_layer_alpha_blend_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_COMPOSITION_LAYER_ALPHA_BLEND_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_COMPOSITION_LAYER_ALPHA_BLEND_EXTENSION_NAME_STR;
     }
     #[cfg(target_os = "android")]
     #[derive(Copy, Clone)]
@@ -4033,6 +4064,8 @@ pub mod raw {
     impl AndroidSurfaceSwapchainCreateFB {
         pub const VERSION: u32 = sys::FB_android_surface_swapchain_create_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_ANDROID_SURFACE_SWAPCHAIN_CREATE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str =
+            sys::FB_ANDROID_SURFACE_SWAPCHAIN_CREATE_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct SwapchainUpdateStateFB {
@@ -4042,6 +4075,7 @@ pub mod raw {
     impl SwapchainUpdateStateFB {
         pub const VERSION: u32 = sys::FB_swapchain_update_state_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_SWAPCHAIN_UPDATE_STATE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_SWAPCHAIN_UPDATE_STATE_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4065,6 +4099,8 @@ pub mod raw {
     impl CompositionLayerSecureContentFB {
         pub const VERSION: u32 = sys::FB_composition_layer_secure_content_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_COMPOSITION_LAYER_SECURE_CONTENT_EXTENSION_NAME;
+        pub const NAME_STR: &'static str =
+            sys::FB_COMPOSITION_LAYER_SECURE_CONTENT_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct BodyTrackingFB {
@@ -4076,6 +4112,7 @@ pub mod raw {
     impl BodyTrackingFB {
         pub const VERSION: u32 = sys::FB_body_tracking_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_BODY_TRACKING_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_BODY_TRACKING_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4111,6 +4148,7 @@ pub mod raw {
     impl DisplayRefreshRateFB {
         pub const VERSION: u32 = sys::FB_display_refresh_rate_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_DISPLAY_REFRESH_RATE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_DISPLAY_REFRESH_RATE_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4141,6 +4179,7 @@ pub mod raw {
     impl ColorSpaceFB {
         pub const VERSION: u32 = sys::FB_color_space_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_COLOR_SPACE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_COLOR_SPACE_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4166,6 +4205,7 @@ pub mod raw {
     impl HandTrackingMeshFB {
         pub const VERSION: u32 = sys::FB_hand_tracking_mesh_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_HAND_TRACKING_MESH_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_HAND_TRACKING_MESH_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4185,12 +4225,14 @@ pub mod raw {
     impl HandTrackingAimFB {
         pub const VERSION: u32 = sys::FB_hand_tracking_aim_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_HAND_TRACKING_AIM_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_HAND_TRACKING_AIM_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct HandTrackingCapsulesFB {}
     impl HandTrackingCapsulesFB {
         pub const VERSION: u32 = sys::FB_hand_tracking_capsules_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_HAND_TRACKING_CAPSULES_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_HAND_TRACKING_CAPSULES_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct SpatialEntityFB {
@@ -4203,6 +4245,7 @@ pub mod raw {
     impl SpatialEntityFB {
         pub const VERSION: u32 = sys::FB_spatial_entity_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_SPATIAL_ENTITY_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_SPATIAL_ENTITY_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4245,6 +4288,7 @@ pub mod raw {
     impl FoveationFB {
         pub const VERSION: u32 = sys::FB_foveation_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_FOVEATION_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_FOVEATION_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4268,6 +4312,7 @@ pub mod raw {
     impl FoveationConfigurationFB {
         pub const VERSION: u32 = sys::FB_foveation_configuration_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_FOVEATION_CONFIGURATION_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_FOVEATION_CONFIGURATION_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct KeyboardTrackingFB {
@@ -4277,6 +4322,7 @@ pub mod raw {
     impl KeyboardTrackingFB {
         pub const VERSION: u32 = sys::FB_keyboard_tracking_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_KEYBOARD_TRACKING_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_KEYBOARD_TRACKING_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4309,6 +4355,7 @@ pub mod raw {
     impl TriangleMeshFB {
         pub const VERSION: u32 = sys::FB_triangle_mesh_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_TRIANGLE_MESH_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_TRIANGLE_MESH_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4377,6 +4424,7 @@ pub mod raw {
     impl PassthroughFB {
         pub const VERSION: u32 = sys::FB_passthrough_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_PASSTHROUGH_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_PASSTHROUGH_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4444,6 +4492,7 @@ pub mod raw {
     impl RenderModelFB {
         pub const VERSION: u32 = sys::FB_render_model_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_RENDER_MODEL_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_RENDER_MODEL_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4474,6 +4523,7 @@ pub mod raw {
     impl SpatialEntityQueryFB {
         pub const VERSION: u32 = sys::FB_spatial_entity_query_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_SPATIAL_ENTITY_QUERY_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_SPATIAL_ENTITY_QUERY_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4500,6 +4550,7 @@ pub mod raw {
     impl SpatialEntityStorageFB {
         pub const VERSION: u32 = sys::FB_spatial_entity_storage_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_SPATIAL_ENTITY_STORAGE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_SPATIAL_ENTITY_STORAGE_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4523,6 +4574,7 @@ pub mod raw {
     impl FoveationVulkanFB {
         pub const VERSION: u32 = sys::FB_foveation_vulkan_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_FOVEATION_VULKAN_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_FOVEATION_VULKAN_EXTENSION_NAME_STR;
     }
     #[cfg(target_os = "android")]
     #[derive(Copy, Clone)]
@@ -4532,24 +4584,30 @@ pub mod raw {
         pub const VERSION: u32 = sys::FB_swapchain_update_state_android_surface_SPEC_VERSION;
         pub const NAME: &'static [u8] =
             sys::FB_SWAPCHAIN_UPDATE_STATE_ANDROID_SURFACE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str =
+            sys::FB_SWAPCHAIN_UPDATE_STATE_ANDROID_SURFACE_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct SwapchainUpdateStateOpenglEsFB {}
     impl SwapchainUpdateStateOpenglEsFB {
         pub const VERSION: u32 = sys::FB_swapchain_update_state_opengl_es_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_SWAPCHAIN_UPDATE_STATE_OPENGL_ES_EXTENSION_NAME;
+        pub const NAME_STR: &'static str =
+            sys::FB_SWAPCHAIN_UPDATE_STATE_OPENGL_ES_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct SwapchainUpdateStateVulkanFB {}
     impl SwapchainUpdateStateVulkanFB {
         pub const VERSION: u32 = sys::FB_swapchain_update_state_vulkan_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_SWAPCHAIN_UPDATE_STATE_VULKAN_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_SWAPCHAIN_UPDATE_STATE_VULKAN_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct TouchControllerProFB {}
     impl TouchControllerProFB {
         pub const VERSION: u32 = sys::FB_touch_controller_pro_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_TOUCH_CONTROLLER_PRO_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_TOUCH_CONTROLLER_PRO_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct SpatialEntitySharingFB {
@@ -4558,6 +4616,7 @@ pub mod raw {
     impl SpatialEntitySharingFB {
         pub const VERSION: u32 = sys::FB_spatial_entity_sharing_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_SPATIAL_ENTITY_SHARING_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_SPATIAL_ENTITY_SHARING_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4577,12 +4636,14 @@ pub mod raw {
     impl SpaceWarpFB {
         pub const VERSION: u32 = sys::FB_space_warp_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_SPACE_WARP_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_SPACE_WARP_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct HapticAmplitudeEnvelopeFB {}
     impl HapticAmplitudeEnvelopeFB {
         pub const VERSION: u32 = sys::FB_haptic_amplitude_envelope_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_HAPTIC_AMPLITUDE_ENVELOPE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_HAPTIC_AMPLITUDE_ENVELOPE_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct SceneFB {
@@ -4595,6 +4656,7 @@ pub mod raw {
     impl SceneFB {
         pub const VERSION: u32 = sys::FB_scene_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_SCENE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_SCENE_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4632,6 +4694,7 @@ pub mod raw {
     impl SceneCaptureFB {
         pub const VERSION: u32 = sys::FB_scene_capture_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_SCENE_CAPTURE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_SCENE_CAPTURE_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4653,6 +4716,7 @@ pub mod raw {
     impl SpatialEntityContainerFB {
         pub const VERSION: u32 = sys::FB_spatial_entity_container_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_SPATIAL_ENTITY_CONTAINER_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_SPATIAL_ENTITY_CONTAINER_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4676,6 +4740,7 @@ pub mod raw {
     impl FaceTrackingFB {
         pub const VERSION: u32 = sys::FB_face_tracking_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_FACE_TRACKING_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_FACE_TRACKING_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4707,6 +4772,7 @@ pub mod raw {
     impl EyeTrackingSocialFB {
         pub const VERSION: u32 = sys::FB_eye_tracking_social_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_EYE_TRACKING_SOCIAL_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_EYE_TRACKING_SOCIAL_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4737,6 +4803,7 @@ pub mod raw {
     impl PassthroughKeyboardHandsFB {
         pub const VERSION: u32 = sys::FB_passthrough_keyboard_hands_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_PASSTHROUGH_KEYBOARD_HANDS_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_PASSTHROUGH_KEYBOARD_HANDS_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4760,12 +4827,14 @@ pub mod raw {
     impl CompositionLayerSettingsFB {
         pub const VERSION: u32 = sys::FB_composition_layer_settings_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_COMPOSITION_LAYER_SETTINGS_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_COMPOSITION_LAYER_SETTINGS_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct TouchControllerProximityFB {}
     impl TouchControllerProximityFB {
         pub const VERSION: u32 = sys::FB_touch_controller_proximity_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_TOUCH_CONTROLLER_PROXIMITY_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_TOUCH_CONTROLLER_PROXIMITY_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct HapticPcmFB {
@@ -4774,6 +4843,7 @@ pub mod raw {
     impl HapticPcmFB {
         pub const VERSION: u32 = sys::FB_haptic_pcm_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_HAPTIC_PCM_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_HAPTIC_PCM_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4793,6 +4863,7 @@ pub mod raw {
     impl CompositionLayerDepthTestFB {
         pub const VERSION: u32 = sys::FB_composition_layer_depth_test_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_COMPOSITION_LAYER_DEPTH_TEST_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_COMPOSITION_LAYER_DEPTH_TEST_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct SpatialEntityStorageBatchFB {
@@ -4801,6 +4872,7 @@ pub mod raw {
     impl SpatialEntityStorageBatchFB {
         pub const VERSION: u32 = sys::FB_spatial_entity_storage_batch_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_SPATIAL_ENTITY_STORAGE_BATCH_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_SPATIAL_ENTITY_STORAGE_BATCH_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4824,6 +4896,7 @@ pub mod raw {
     impl SpatialEntityUserFB {
         pub const VERSION: u32 = sys::FB_spatial_entity_user_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_SPATIAL_ENTITY_USER_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_SPATIAL_ENTITY_USER_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4855,6 +4928,7 @@ pub mod raw {
     impl FaceTracking2FB {
         pub const VERSION: u32 = sys::FB_face_tracking2_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::FB_FACE_TRACKING2_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::FB_FACE_TRACKING2_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4882,6 +4956,8 @@ pub mod raw {
     impl ViveCosmosControllerInteractionHTC {
         pub const VERSION: u32 = sys::HTC_vive_cosmos_controller_interaction_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::HTC_VIVE_COSMOS_CONTROLLER_INTERACTION_EXTENSION_NAME;
+        pub const NAME_STR: &'static str =
+            sys::HTC_VIVE_COSMOS_CONTROLLER_INTERACTION_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct FacialTrackingHTC {
@@ -4892,6 +4968,7 @@ pub mod raw {
     impl FacialTrackingHTC {
         pub const VERSION: u32 = sys::HTC_facial_tracking_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::HTC_FACIAL_TRACKING_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::HTC_FACIAL_TRACKING_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4919,18 +4996,23 @@ pub mod raw {
     impl ViveFocus3ControllerInteractionHTC {
         pub const VERSION: u32 = sys::HTC_vive_focus3_controller_interaction_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::HTC_VIVE_FOCUS3_CONTROLLER_INTERACTION_EXTENSION_NAME;
+        pub const NAME_STR: &'static str =
+            sys::HTC_VIVE_FOCUS3_CONTROLLER_INTERACTION_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct HandInteractionHTC {}
     impl HandInteractionHTC {
         pub const VERSION: u32 = sys::HTC_hand_interaction_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::HTC_HAND_INTERACTION_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::HTC_HAND_INTERACTION_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct ViveWristTrackerInteractionHTC {}
     impl ViveWristTrackerInteractionHTC {
         pub const VERSION: u32 = sys::HTC_vive_wrist_tracker_interaction_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::HTC_VIVE_WRIST_TRACKER_INTERACTION_EXTENSION_NAME;
+        pub const NAME_STR: &'static str =
+            sys::HTC_VIVE_WRIST_TRACKER_INTERACTION_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct PassthroughHTC {
@@ -4940,6 +5022,7 @@ pub mod raw {
     impl PassthroughHTC {
         pub const VERSION: u32 = sys::HTC_passthrough_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::HTC_PASSTHROUGH_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::HTC_PASSTHROUGH_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4965,6 +5048,7 @@ pub mod raw {
     impl FoveationHTC {
         pub const VERSION: u32 = sys::HTC_foveation_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::HTC_FOVEATION_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::HTC_FOVEATION_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -4987,6 +5071,7 @@ pub mod raw {
     impl AnchorHTC {
         pub const VERSION: u32 = sys::HTC_anchor_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::HTC_ANCHOR_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::HTC_ANCHOR_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5010,6 +5095,7 @@ pub mod raw {
     impl ControllerInteractionHUAWEI {
         pub const VERSION: u32 = sys::HUAWEI_controller_interaction_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::HUAWEI_CONTROLLER_INTERACTION_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::HUAWEI_CONTROLLER_INTERACTION_EXTENSION_NAME_STR;
     }
     #[cfg(target_os = "android")]
     #[derive(Copy, Clone)]
@@ -5020,6 +5106,7 @@ pub mod raw {
     impl AndroidThreadSettingsKHR {
         pub const VERSION: u32 = sys::KHR_android_thread_settings_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::KHR_ANDROID_THREAD_SETTINGS_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::KHR_ANDROID_THREAD_SETTINGS_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5043,6 +5130,7 @@ pub mod raw {
     impl AndroidSurfaceSwapchainKHR {
         pub const VERSION: u32 = sys::KHR_android_surface_swapchain_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::KHR_ANDROID_SURFACE_SWAPCHAIN_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::KHR_ANDROID_SURFACE_SWAPCHAIN_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5062,6 +5150,7 @@ pub mod raw {
     impl CompositionLayerCubeKHR {
         pub const VERSION: u32 = sys::KHR_composition_layer_cube_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::KHR_COMPOSITION_LAYER_CUBE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::KHR_COMPOSITION_LAYER_CUBE_EXTENSION_NAME_STR;
     }
     #[cfg(target_os = "android")]
     #[derive(Copy, Clone)]
@@ -5070,30 +5159,35 @@ pub mod raw {
     impl AndroidCreateInstanceKHR {
         pub const VERSION: u32 = sys::KHR_android_create_instance_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::KHR_ANDROID_CREATE_INSTANCE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::KHR_ANDROID_CREATE_INSTANCE_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct CompositionLayerDepthKHR {}
     impl CompositionLayerDepthKHR {
         pub const VERSION: u32 = sys::KHR_composition_layer_depth_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::KHR_COMPOSITION_LAYER_DEPTH_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::KHR_COMPOSITION_LAYER_DEPTH_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct VulkanSwapchainFormatListKHR {}
     impl VulkanSwapchainFormatListKHR {
         pub const VERSION: u32 = sys::KHR_vulkan_swapchain_format_list_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::KHR_VULKAN_SWAPCHAIN_FORMAT_LIST_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::KHR_VULKAN_SWAPCHAIN_FORMAT_LIST_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct CompositionLayerCylinderKHR {}
     impl CompositionLayerCylinderKHR {
         pub const VERSION: u32 = sys::KHR_composition_layer_cylinder_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::KHR_COMPOSITION_LAYER_CYLINDER_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::KHR_COMPOSITION_LAYER_CYLINDER_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct CompositionLayerEquirectKHR {}
     impl CompositionLayerEquirectKHR {
         pub const VERSION: u32 = sys::KHR_composition_layer_equirect_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::KHR_COMPOSITION_LAYER_EQUIRECT_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::KHR_COMPOSITION_LAYER_EQUIRECT_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct OpenglEnableKHR {
@@ -5102,6 +5196,7 @@ pub mod raw {
     impl OpenglEnableKHR {
         pub const VERSION: u32 = sys::KHR_opengl_enable_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::KHR_OPENGL_ENABLE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::KHR_OPENGL_ENABLE_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5123,6 +5218,7 @@ pub mod raw {
     impl OpenglEsEnableKHR {
         pub const VERSION: u32 = sys::KHR_opengl_es_enable_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::KHR_OPENGL_ES_ENABLE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::KHR_OPENGL_ES_ENABLE_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5147,6 +5243,7 @@ pub mod raw {
     impl VulkanEnableKHR {
         pub const VERSION: u32 = sys::KHR_vulkan_enable_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::KHR_VULKAN_ENABLE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::KHR_VULKAN_ENABLE_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5182,6 +5279,7 @@ pub mod raw {
     impl D3d11EnableKHR {
         pub const VERSION: u32 = sys::KHR_D3D11_enable_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::KHR_D3D11_ENABLE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::KHR_D3D11_ENABLE_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5205,6 +5303,7 @@ pub mod raw {
     impl D3d12EnableKHR {
         pub const VERSION: u32 = sys::KHR_D3D12_enable_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::KHR_D3D12_ENABLE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::KHR_D3D12_ENABLE_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5228,6 +5327,7 @@ pub mod raw {
     impl MetalEnableKHR {
         pub const VERSION: u32 = sys::KHR_metal_enable_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::KHR_METAL_ENABLE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::KHR_METAL_ENABLE_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5249,6 +5349,7 @@ pub mod raw {
     impl VisibilityMaskKHR {
         pub const VERSION: u32 = sys::KHR_visibility_mask_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::KHR_VISIBILITY_MASK_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::KHR_VISIBILITY_MASK_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5268,6 +5369,8 @@ pub mod raw {
     impl CompositionLayerColorScaleBiasKHR {
         pub const VERSION: u32 = sys::KHR_composition_layer_color_scale_bias_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::KHR_COMPOSITION_LAYER_COLOR_SCALE_BIAS_EXTENSION_NAME;
+        pub const NAME_STR: &'static str =
+            sys::KHR_COMPOSITION_LAYER_COLOR_SCALE_BIAS_EXTENSION_NAME_STR;
     }
     #[cfg(windows)]
     #[derive(Copy, Clone)]
@@ -5280,6 +5383,8 @@ pub mod raw {
         pub const VERSION: u32 = sys::KHR_win32_convert_performance_counter_time_SPEC_VERSION;
         pub const NAME: &'static [u8] =
             sys::KHR_WIN32_CONVERT_PERFORMANCE_COUNTER_TIME_EXTENSION_NAME;
+        pub const NAME_STR: &'static str =
+            sys::KHR_WIN32_CONVERT_PERFORMANCE_COUNTER_TIME_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5314,6 +5419,7 @@ pub mod raw {
     impl ConvertTimespecTimeKHR {
         pub const VERSION: u32 = sys::KHR_convert_timespec_time_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::KHR_CONVERT_TIMESPEC_TIME_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::KHR_CONVERT_TIMESPEC_TIME_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5339,6 +5445,7 @@ pub mod raw {
     impl LoaderInitKHR {
         pub const VERSION: u32 = sys::KHR_loader_init_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::KHR_LOADER_INIT_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::KHR_LOADER_INIT_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5360,6 +5467,7 @@ pub mod raw {
     impl LoaderInitAndroidKHR {
         pub const VERSION: u32 = sys::KHR_loader_init_android_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::KHR_LOADER_INIT_ANDROID_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::KHR_LOADER_INIT_ANDROID_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct VulkanEnable2KHR {
@@ -5371,6 +5479,7 @@ pub mod raw {
     impl VulkanEnable2KHR {
         pub const VERSION: u32 = sys::KHR_vulkan_enable2_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::KHR_VULKAN_ENABLE2_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::KHR_VULKAN_ENABLE2_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5402,12 +5511,14 @@ pub mod raw {
     impl CompositionLayerEquirect2KHR {
         pub const VERSION: u32 = sys::KHR_composition_layer_equirect2_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::KHR_COMPOSITION_LAYER_EQUIRECT2_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::KHR_COMPOSITION_LAYER_EQUIRECT2_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct BindingModificationKHR {}
     impl BindingModificationKHR {
         pub const VERSION: u32 = sys::KHR_binding_modification_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::KHR_BINDING_MODIFICATION_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::KHR_BINDING_MODIFICATION_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct SwapchainUsageInputAttachmentBitKHR {}
@@ -5415,6 +5526,8 @@ pub mod raw {
         pub const VERSION: u32 = sys::KHR_swapchain_usage_input_attachment_bit_SPEC_VERSION;
         pub const NAME: &'static [u8] =
             sys::KHR_SWAPCHAIN_USAGE_INPUT_ATTACHMENT_BIT_EXTENSION_NAME;
+        pub const NAME_STR: &'static str =
+            sys::KHR_SWAPCHAIN_USAGE_INPUT_ATTACHMENT_BIT_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct LocateSpacesKHR {
@@ -5423,6 +5536,7 @@ pub mod raw {
     impl LocateSpacesKHR {
         pub const VERSION: u32 = sys::KHR_locate_spaces_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::KHR_LOCATE_SPACES_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::KHR_LOCATE_SPACES_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5442,6 +5556,7 @@ pub mod raw {
     impl Maintenance1KHR {
         pub const VERSION: u32 = sys::KHR_maintenance1_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::KHR_MAINTENANCE1_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::KHR_MAINTENANCE1_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct FoveationEyeTrackedMETA {
@@ -5450,6 +5565,7 @@ pub mod raw {
     impl FoveationEyeTrackedMETA {
         pub const VERSION: u32 = sys::META_foveation_eye_tracked_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::META_FOVEATION_EYE_TRACKED_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::META_FOVEATION_EYE_TRACKED_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5469,6 +5585,7 @@ pub mod raw {
     impl LocalDimmingMETA {
         pub const VERSION: u32 = sys::META_local_dimming_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::META_LOCAL_DIMMING_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::META_LOCAL_DIMMING_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct PassthroughPreferencesMETA {
@@ -5477,6 +5594,7 @@ pub mod raw {
     impl PassthroughPreferencesMETA {
         pub const VERSION: u32 = sys::META_passthrough_preferences_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::META_PASSTHROUGH_PREFERENCES_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::META_PASSTHROUGH_PREFERENCES_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5509,6 +5627,7 @@ pub mod raw {
     impl VirtualKeyboardMETA {
         pub const VERSION: u32 = sys::META_virtual_keyboard_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::META_VIRTUAL_KEYBOARD_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::META_VIRTUAL_KEYBOARD_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5580,6 +5699,8 @@ pub mod raw {
     impl VulkanSwapchainCreateInfoMETA {
         pub const VERSION: u32 = sys::META_vulkan_swapchain_create_info_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::META_VULKAN_SWAPCHAIN_CREATE_INFO_EXTENSION_NAME;
+        pub const NAME_STR: &'static str =
+            sys::META_VULKAN_SWAPCHAIN_CREATE_INFO_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct PerformanceMetricsMETA {
@@ -5592,6 +5713,7 @@ pub mod raw {
     impl PerformanceMetricsMETA {
         pub const VERSION: u32 = sys::META_performance_metrics_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::META_PERFORMANCE_METRICS_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::META_PERFORMANCE_METRICS_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5627,6 +5749,7 @@ pub mod raw {
     impl HeadsetIdMETA {
         pub const VERSION: u32 = sys::META_headset_id_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::META_HEADSET_ID_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::META_HEADSET_ID_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct RecommendedLayerResolutionMETA {
@@ -5635,6 +5758,8 @@ pub mod raw {
     impl RecommendedLayerResolutionMETA {
         pub const VERSION: u32 = sys::META_recommended_layer_resolution_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::META_RECOMMENDED_LAYER_RESOLUTION_EXTENSION_NAME;
+        pub const NAME_STR: &'static str =
+            sys::META_RECOMMENDED_LAYER_RESOLUTION_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5658,6 +5783,7 @@ pub mod raw {
     impl PassthroughColorLutMETA {
         pub const VERSION: u32 = sys::META_passthrough_color_lut_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::META_PASSTHROUGH_COLOR_LUT_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::META_PASSTHROUGH_COLOR_LUT_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5687,6 +5813,7 @@ pub mod raw {
     impl SpatialEntityMeshMETA {
         pub const VERSION: u32 = sys::META_spatial_entity_mesh_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::META_SPATIAL_ENTITY_MESH_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::META_SPATIAL_ENTITY_MESH_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5706,12 +5833,14 @@ pub mod raw {
     impl AutomaticLayerFilterMETA {
         pub const VERSION: u32 = sys::META_automatic_layer_filter_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::META_AUTOMATIC_LAYER_FILTER_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::META_AUTOMATIC_LAYER_FILTER_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct TouchControllerPlusMETA {}
     impl TouchControllerPlusMETA {
         pub const VERSION: u32 = sys::META_touch_controller_plus_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::META_TOUCH_CONTROLLER_PLUS_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::META_TOUCH_CONTROLLER_PLUS_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct EnvironmentDepthMETA {
@@ -5730,6 +5859,7 @@ pub mod raw {
     impl EnvironmentDepthMETA {
         pub const VERSION: u32 = sys::META_environment_depth_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::META_ENVIRONMENT_DEPTH_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::META_ENVIRONMENT_DEPTH_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5795,18 +5925,21 @@ pub mod raw {
     impl Ml2ControllerInteractionML {
         pub const VERSION: u32 = sys::ML_ml2_controller_interaction_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::ML_ML2_CONTROLLER_INTERACTION_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::ML_ML2_CONTROLLER_INTERACTION_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct FrameEndInfoML {}
     impl FrameEndInfoML {
         pub const VERSION: u32 = sys::ML_frame_end_info_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::ML_FRAME_END_INFO_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::ML_FRAME_END_INFO_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct GlobalDimmerML {}
     impl GlobalDimmerML {
         pub const VERSION: u32 = sys::ML_global_dimmer_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::ML_GLOBAL_DIMMER_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::ML_GLOBAL_DIMMER_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct CompatML {
@@ -5815,6 +5948,7 @@ pub mod raw {
     impl CompatML {
         pub const VERSION: u32 = sys::ML_compat_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::ML_COMPAT_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::ML_COMPAT_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5849,6 +5983,7 @@ pub mod raw {
     impl MarkerUnderstandingML {
         pub const VERSION: u32 = sys::ML_marker_understanding_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::ML_MARKER_UNDERSTANDING_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::ML_MARKER_UNDERSTANDING_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5912,6 +6047,7 @@ pub mod raw {
     impl LocalizationMapML {
         pub const VERSION: u32 = sys::ML_localization_map_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::ML_LOCALIZATION_MAP_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::ML_LOCALIZATION_MAP_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5957,6 +6093,7 @@ pub mod raw {
     impl UserCalibrationML {
         pub const VERSION: u32 = sys::ML_user_calibration_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::ML_USER_CALIBRATION_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::ML_USER_CALIBRATION_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -5976,6 +6113,7 @@ pub mod raw {
     impl HeadlessMND {
         pub const VERSION: u32 = sys::MND_headless_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::MND_HEADLESS_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::MND_HEADLESS_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct SwapchainUsageInputAttachmentBitMND {}
@@ -5983,12 +6121,15 @@ pub mod raw {
         pub const VERSION: u32 = sys::MND_swapchain_usage_input_attachment_bit_SPEC_VERSION;
         pub const NAME: &'static [u8] =
             sys::MND_SWAPCHAIN_USAGE_INPUT_ATTACHMENT_BIT_EXTENSION_NAME;
+        pub const NAME_STR: &'static str =
+            sys::MND_SWAPCHAIN_USAGE_INPUT_ATTACHMENT_BIT_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct UnboundedReferenceSpaceMSFT {}
     impl UnboundedReferenceSpaceMSFT {
         pub const VERSION: u32 = sys::MSFT_unbounded_reference_space_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::MSFT_UNBOUNDED_REFERENCE_SPACE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::MSFT_UNBOUNDED_REFERENCE_SPACE_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct SpatialAnchorMSFT {
@@ -5999,6 +6140,7 @@ pub mod raw {
     impl SpatialAnchorMSFT {
         pub const VERSION: u32 = sys::MSFT_spatial_anchor_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::MSFT_SPATIAL_ANCHOR_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::MSFT_SPATIAL_ANCHOR_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -6033,6 +6175,7 @@ pub mod raw {
     impl SpatialGraphBridgeMSFT {
         pub const VERSION: u32 = sys::MSFT_spatial_graph_bridge_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::MSFT_SPATIAL_GRAPH_BRIDGE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::MSFT_SPATIAL_GRAPH_BRIDGE_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -6072,6 +6215,7 @@ pub mod raw {
     impl HandInteractionMSFT {
         pub const VERSION: u32 = sys::MSFT_hand_interaction_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::MSFT_HAND_INTERACTION_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::MSFT_HAND_INTERACTION_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct HandTrackingMeshMSFT {
@@ -6081,6 +6225,7 @@ pub mod raw {
     impl HandTrackingMeshMSFT {
         pub const VERSION: u32 = sys::MSFT_hand_tracking_mesh_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::MSFT_HAND_TRACKING_MESH_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::MSFT_HAND_TRACKING_MESH_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -6104,12 +6249,15 @@ pub mod raw {
     impl SecondaryViewConfigurationMSFT {
         pub const VERSION: u32 = sys::MSFT_secondary_view_configuration_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::MSFT_SECONDARY_VIEW_CONFIGURATION_EXTENSION_NAME;
+        pub const NAME_STR: &'static str =
+            sys::MSFT_SECONDARY_VIEW_CONFIGURATION_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct FirstPersonObserverMSFT {}
     impl FirstPersonObserverMSFT {
         pub const VERSION: u32 = sys::MSFT_first_person_observer_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::MSFT_FIRST_PERSON_OBSERVER_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::MSFT_FIRST_PERSON_OBSERVER_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct ControllerModelMSFT {
@@ -6121,6 +6269,7 @@ pub mod raw {
     impl ControllerModelMSFT {
         pub const VERSION: u32 = sys::MSFT_controller_model_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::MSFT_CONTROLLER_MODEL_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::MSFT_CONTROLLER_MODEL_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -6159,6 +6308,7 @@ pub mod raw {
     impl PerceptionAnchorInteropMSFT {
         pub const VERSION: u32 = sys::MSFT_perception_anchor_interop_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::MSFT_PERCEPTION_ANCHOR_INTEROP_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::MSFT_PERCEPTION_ANCHOR_INTEROP_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -6192,6 +6342,8 @@ pub mod raw {
     impl HolographicWindowAttachmentMSFT {
         pub const VERSION: u32 = sys::MSFT_holographic_window_attachment_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::MSFT_HOLOGRAPHIC_WINDOW_ATTACHMENT_EXTENSION_NAME;
+        pub const NAME_STR: &'static str =
+            sys::MSFT_HOLOGRAPHIC_WINDOW_ATTACHMENT_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct CompositionLayerReprojectionMSFT {
@@ -6200,6 +6352,8 @@ pub mod raw {
     impl CompositionLayerReprojectionMSFT {
         pub const VERSION: u32 = sys::MSFT_composition_layer_reprojection_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::MSFT_COMPOSITION_LAYER_REPROJECTION_EXTENSION_NAME;
+        pub const NAME_STR: &'static str =
+            sys::MSFT_COMPOSITION_LAYER_REPROJECTION_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -6228,6 +6382,7 @@ pub mod raw {
     impl SpatialAnchorPersistenceMSFT {
         pub const VERSION: u32 = sys::MSFT_spatial_anchor_persistence_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::MSFT_SPATIAL_ANCHOR_PERSISTENCE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::MSFT_SPATIAL_ANCHOR_PERSISTENCE_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -6289,6 +6444,8 @@ pub mod raw {
     impl AndroidSessionStateEnableOCULUS {
         pub const VERSION: u32 = sys::OCULUS_android_session_state_enable_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::OCULUS_ANDROID_SESSION_STATE_ENABLE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str =
+            sys::OCULUS_ANDROID_SESSION_STATE_ENABLE_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct AudioDeviceGuidOCULUS {
@@ -6298,6 +6455,7 @@ pub mod raw {
     impl AudioDeviceGuidOCULUS {
         pub const VERSION: u32 = sys::OCULUS_audio_device_guid_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::OCULUS_AUDIO_DEVICE_GUID_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::OCULUS_AUDIO_DEVICE_GUID_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -6323,6 +6481,7 @@ pub mod raw {
     impl ExternalCameraOCULUS {
         pub const VERSION: u32 = sys::OCULUS_external_camera_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::OCULUS_EXTERNAL_CAMERA_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::OCULUS_EXTERNAL_CAMERA_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -6342,6 +6501,7 @@ pub mod raw {
     impl ControllerInteractionOPPO {
         pub const VERSION: u32 = sys::OPPO_controller_interaction_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::OPPO_CONTROLLER_INTERACTION_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::OPPO_CONTROLLER_INTERACTION_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct TrackingOptimizationSettingsQCOM {
@@ -6350,6 +6510,8 @@ pub mod raw {
     impl TrackingOptimizationSettingsQCOM {
         pub const VERSION: u32 = sys::QCOM_tracking_optimization_settings_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::QCOM_TRACKING_OPTIMIZATION_SETTINGS_EXTENSION_NAME;
+        pub const NAME_STR: &'static str =
+            sys::QCOM_TRACKING_OPTIMIZATION_SETTINGS_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -6373,30 +6535,36 @@ pub mod raw {
     impl HandTrackingForearmULTRALEAP {
         pub const VERSION: u32 = sys::ULTRALEAP_hand_tracking_forearm_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::ULTRALEAP_HAND_TRACKING_FOREARM_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::ULTRALEAP_HAND_TRACKING_FOREARM_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct AnalogThresholdVALVE {}
     impl AnalogThresholdVALVE {
         pub const VERSION: u32 = sys::VALVE_analog_threshold_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::VALVE_ANALOG_THRESHOLD_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::VALVE_ANALOG_THRESHOLD_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct QuadViewsVARJO {}
     impl QuadViewsVARJO {
         pub const VERSION: u32 = sys::VARJO_quad_views_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::VARJO_QUAD_VIEWS_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::VARJO_QUAD_VIEWS_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct FoveatedRenderingVARJO {}
     impl FoveatedRenderingVARJO {
         pub const VERSION: u32 = sys::VARJO_foveated_rendering_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::VARJO_FOVEATED_RENDERING_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::VARJO_FOVEATED_RENDERING_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct CompositionLayerDepthTestVARJO {}
     impl CompositionLayerDepthTestVARJO {
         pub const VERSION: u32 = sys::VARJO_composition_layer_depth_test_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::VARJO_COMPOSITION_LAYER_DEPTH_TEST_EXTENSION_NAME;
+        pub const NAME_STR: &'static str =
+            sys::VARJO_COMPOSITION_LAYER_DEPTH_TEST_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct EnvironmentDepthEstimationVARJO {
@@ -6405,6 +6573,8 @@ pub mod raw {
     impl EnvironmentDepthEstimationVARJO {
         pub const VERSION: u32 = sys::VARJO_environment_depth_estimation_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::VARJO_ENVIRONMENT_DEPTH_ESTIMATION_EXTENSION_NAME;
+        pub const NAME_STR: &'static str =
+            sys::VARJO_ENVIRONMENT_DEPTH_ESTIMATION_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -6430,6 +6600,7 @@ pub mod raw {
     impl MarkerTrackingVARJO {
         pub const VERSION: u32 = sys::VARJO_marker_tracking_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::VARJO_MARKER_TRACKING_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::VARJO_MARKER_TRACKING_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -6467,6 +6638,7 @@ pub mod raw {
     impl ViewOffsetVARJO {
         pub const VERSION: u32 = sys::VARJO_view_offset_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::VARJO_VIEW_OFFSET_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::VARJO_VIEW_OFFSET_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -6486,24 +6658,28 @@ pub mod raw {
     impl Xr4ControllerInteractionVARJO {
         pub const VERSION: u32 = sys::VARJO_xr4_controller_interaction_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::VARJO_XR4_CONTROLLER_INTERACTION_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::VARJO_XR4_CONTROLLER_INTERACTION_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct ControllerInteractionYVR {}
     impl ControllerInteractionYVR {
         pub const VERSION: u32 = sys::YVR_controller_interaction_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::YVR_CONTROLLER_INTERACTION_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::YVR_CONTROLLER_INTERACTION_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct OverlayEXTX {}
     impl OverlayEXTX {
         pub const VERSION: u32 = sys::EXTX_overlay_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::EXTX_OVERLAY_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::EXTX_OVERLAY_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct EglEnableMNDX {}
     impl EglEnableMNDX {
         pub const VERSION: u32 = sys::MNDX_egl_enable_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::MNDX_EGL_ENABLE_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::MNDX_EGL_ENABLE_EXTENSION_NAME_STR;
     }
     #[derive(Copy, Clone)]
     pub struct ForceFeedbackCurlMNDX {
@@ -6512,6 +6688,7 @@ pub mod raw {
     impl ForceFeedbackCurlMNDX {
         pub const VERSION: u32 = sys::MNDX_force_feedback_curl_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::MNDX_FORCE_FEEDBACK_CURL_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::MNDX_FORCE_FEEDBACK_CURL_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
@@ -6533,6 +6710,7 @@ pub mod raw {
     impl ViveTrackerInteractionHTCX {
         pub const VERSION: u32 = sys::HTCX_vive_tracker_interaction_SPEC_VERSION;
         pub const NAME: &'static [u8] = sys::HTCX_VIVE_TRACKER_INTERACTION_EXTENSION_NAME;
+        pub const NAME_STR: &'static str = sys::HTCX_VIVE_TRACKER_INTERACTION_EXTENSION_NAME_STR;
         #[doc = r" Load the extension's function pointer table"]
         #[doc = r""]
         #[doc = r" # Safety"]
